@@ -65,13 +65,13 @@ const EditPost = ({ params }: { params: { id: number } }) => {
 
   useEffect(() => {
     getBlogById(params.id)
-    .then(data => {
-      if(titleRef.current && descriptionRef.current){ //titleRef と　descriptionRefが存在するかの判定
-        titleRef.current.value = data.title.value
-        descriptionRef.current.value = data.description
-      }
-    })
-  },[])
+      .then(data => {
+        if (titleRef.current && descriptionRef.current) { //titleRef と　descriptionRefが存在するかの判定
+          titleRef.current.value = data.title
+          descriptionRef.current.value = data.description
+        }
+      })
+  }, [])
   return (
     <>
       <div className="w-full m-auto flex my-4">
